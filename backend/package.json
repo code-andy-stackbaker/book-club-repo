@@ -1,0 +1,24 @@
+{
+  "name": "bookclub-backend",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "studio": "prisma studio",
+    "seed": "prisma db seed",
+    "check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.18.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.18.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "@types/node": "^20.14.12"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  }
+}
