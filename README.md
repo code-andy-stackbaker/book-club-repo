@@ -45,21 +45,29 @@ Environment Variables
 Do not commit .env files. The values below are examples for local/dev.
 
 Backend 
-# Sample .env for local backend below :
+
+Sample .env for local backend below :
 
 
-# (backend/.env) Sample
+(backend/.env) Sample
+
+
 PORT=3000
+
 NODE_ENV=development
+
 CORS_ORIGIN=http://localhost:5173
+
 DATABASE_URL="postgresql://bookclub:bookclub@localhost:5432/bookclub?schema=public"
 
-# Frontend (frontend/.env) below — optional
+
+Frontend (frontend/.env) below — optional
 
 VITE_API_URL	https://api.example.com	Optional override. If unset, the app infers by hostname then falls back same-origin.
 
 
-# (frontend/.env) Sample :
+frontend/.env) Sample :
+
 VITE_API_URL=http://localhost:3000
 
 
@@ -69,7 +77,10 @@ Ports: 5432 (Postgres), 3000 (API), 5173 (Web).
 
 1) Start Postgres (Docker)
 
+   
+
 docker compose up -d
+
 # Postgres 16 on :5432 with db/user/password = bookclub / bookclub / bookclub
 
 Data persists in the named volume db_data. The healthcheck waits for readiness.
