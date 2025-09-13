@@ -1,4 +1,7 @@
-import { Link, Navigate, Route, Routes } from 'react-router-dom'
+import { Link, Navigate, Route, Routes } from 'react-router-dom';
+import AuthorsList from './pages/authors/AuthorsList';
+import AuthorDetail from './pages/authors/AuthorDetail';
+import AuthorForm from './pages/authors/AuthorForm';
 
 export default function App() {
   return (
@@ -16,10 +19,15 @@ export default function App() {
       <main className="mx-auto max-w-5xl px-4 py-6">
         <Routes>
           <Route path="/" element={<Navigate to="/authors" replace />} />
-          <Route path="/authors" element={<div className="text-gray-600">Authors page (coming next).</div>} />
-          <Route path="/books" element={<div className="text-gray-600">Books page (coming next).</div>} />
+          {/* Authors */}
+          <Route path="/authors" element={<AuthorsList />} />
+          <Route path="/authors/new" element={<AuthorForm />} />
+          <Route path="/authors/:id" element={<AuthorDetail />} />
+          <Route path="/authors/:id/edit" element={<AuthorForm />} />
+          {/* Books placeholder (Phase 7 will fill this in) */}
+          <Route path="/books" element={<div className="text-gray-600">Books page coming next.</div>} />
         </Routes>
       </main>
     </div>
-  )
+  );
 }
