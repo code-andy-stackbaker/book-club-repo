@@ -79,7 +79,7 @@ Ports: 5432 (Postgres), 3000 (API), 5173 (Web).
 
    
 
-docker compose up -d
+1.1) docker compose up -d
 
 # Postgres 16 on :5432 with db/user/password = bookclub / bookclub / bookclub
 
