@@ -86,30 +86,37 @@ docker compose up -d
 Data persists in the named volume db_data. The healthcheck waits for readiness.
 
 2) Backend (NestJS API)
+   
 
-cd backend
+2.1) cd backend
 
-npm i
+2.2) npm i
 
-npm run generate         # Prisma client
+2.3) npm run generate  # Prisma client
 
-npm run migrate:dev      # create tables
+2.4) npm run migrate:dev  # create tables
 
-npm run seed             # optional: sample authors & books
+2.5) npm run seed  # optional: sample authors & books
 
-npm run start:dev        # http://localhost:3000
+2.6) npm run start:dev  # http://localhost:3000
+
+  • Swagger: http://localhost:3000/docs
+  
+  • Health: GET /api/healthz, GET /api/readyz
+  
 
 	•	Swagger: http://localhost:3000/docs
 	•	Health: GET /api/healthz → { ok: true }, GET /api/readyz → { ready: true }
 
 3) Frontend (React + Vite)
 
+   
+3.1) cd frontend
 
-cd frontend
+3.2) npm i
 
-npm i
+3.3) npm run dev # opens http://localhost:5173 (uses Vite proxy to backend at http://localhost:3000; no .env needed)
 
-npm run dev              # http://localhost:5173
 
 No local .env is required. In dev, the app calls same-origin /api and Vite proxies to http://localhost:3000.
 
