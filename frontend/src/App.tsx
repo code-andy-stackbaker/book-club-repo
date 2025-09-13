@@ -5,6 +5,7 @@ import AuthorForm from './pages/authors/AuthorForm';
 
 import BooksList from './pages/books/BooksList';
 import BookDetail from './pages/books/BookDetail';
+import BookForm from './pages/books/BookForm';
 
 export default function App() {
   return (
@@ -32,7 +33,9 @@ export default function App() {
           {/* Books */}
           <Route path="/books" element={<BooksList />} />
           <Route path="/books/:id" element={<BookDetail />} />
-          {/* form routes added in Commit 2 */}
+          <Route path="/books/new" element={<BookForm />} />
+          <Route path="/books/:id/edit" element={<BookForm />} />
+         
         </Routes>
       </main>
     </div>
