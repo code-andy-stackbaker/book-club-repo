@@ -77,10 +77,15 @@ Data persists in the named volume db_data. The healthcheck waits for readiness.
 2) Backend (NestJS API)
 
 cd backend
+
 npm i
+
 npm run generate         # Prisma client
+
 npm run migrate:dev      # create tables
+
 npm run seed             # optional: sample authors & books
+
 npm run start:dev        # http://localhost:3000
 
 	•	Swagger: http://localhost:3000/docs
@@ -88,8 +93,11 @@ npm run start:dev        # http://localhost:3000
 
 3) Frontend (React + Vite)
 
+
 cd frontend
+
 npm i
+
 npm run dev              # http://localhost:5173
 
 No local .env is required. In dev, the app calls same-origin /api and Vite proxies to http://localhost:3000.
