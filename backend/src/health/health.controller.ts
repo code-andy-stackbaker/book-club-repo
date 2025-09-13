@@ -1,19 +1,15 @@
-// Liveness is process-up; readiness touches the DB to catch dependency issues.
 import { Controller, Get } from '@nestjs/common';
-import { PrismaService } from '../prisma/prisma.service';
 
+// No controller path prefix → routes are exactly /healthz and /readyz
 @Controller()
 export class HealthController {
-  constructor(private readonly prisma: PrismaService) {}
-
   @Get('healthz')
   liveness() {
     return { ok: true };
   }
 
   @Get('readyz')
-  async readiness() {
-    await this.prisma.$queryRaw`SELECT 1`;
+  readiness() {
     return { ready: true };
   }
 }
